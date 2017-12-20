@@ -1,0 +1,23 @@
+version: "3"
+services:
+  plex:
+    image: timhaak/plex
+    volumes:
+      - '~/mediacenter/plex_config:/config'
+      - '~/mediacenter/downloads:/data'
+    ports:
+      - "3001:32400"
+    networks:
+      - webnet
+  transmission:
+    image: linuxserver/transmission
+    volumes:
+      - '~/mediacenter/transmission_config:/config'
+      - '~/mediacenter/downloads:/downloads'
+    ports:
+      - "5001:9091"
+    networks:
+      - webnet
+
+networks:
+  webnet:
