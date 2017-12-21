@@ -22,9 +22,9 @@ Run the containers
 docker-compose up -d
 ```
 
-You can now access [localhost:3001/web](http://localhost:3001/web) for your **Plex** server, and [localhost:5001](http://localhost:5001) for your **transmission** client.
+You can now access [plex.localhost](http://plex.localhost) for your **Plex** server, and [torrent.localhost](http://torrent.localhost) for your **transmission** client.
 
 ## Roadmap
 
-* [ ] Use [nginx](https://hub.docker.com/_/nginx/) for routing to avoid always writing the port.
+* [x] Use [nginx](https://hub.docker.com/_/nginx/) for routing to avoid always writing the port.
 * [ ] Add support for automatically downloading torrents from RSS feed.
