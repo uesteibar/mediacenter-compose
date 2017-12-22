@@ -17,10 +17,10 @@ http {
 		listen 80;
 
 		server_name
-			tv
-			plex
-			tv.localhost
-			plex.localhost;
+      tv
+      plex
+      tv.localhost
+			<%= ENV["PLEX_DOMAIN"] %>;
 
 		location / {
 			# if a request to / comes in, 301 redirect to the main plex page.
@@ -46,7 +46,7 @@ http {
 
 	server {
 		listen 80;
-		server_name torrent.localhost;
+		server_name <%= ENV["TRANSMISSION_DOMAIN"] %>;
 
 		location / {
 			proxy_set_header X-Real-IP $remote_addr;

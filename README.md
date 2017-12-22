@@ -10,7 +10,13 @@ Clone the repo
 git clone https://github.com/uesteibar/mediacenter-compose.git && cd mediacenter-compose
 ```
 
-Setup the folders
+Copy the `.env` file and customize the domain names
+
+```
+cp .env.sample .env
+```
+
+Setup the environment
 
 ```
 ./setup.sh
