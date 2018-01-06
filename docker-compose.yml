@@ -1,10 +1,21 @@
 version: "3"
 services:
   plex:
-    image: timhaak/plex
+    container_name: plex
+    image: plexinc/pms-docker
+    restart: unless-stopped
+    environment:
+      - TZ=Europe/Bucharest
+      - PLEX_CLAIM=
+      - PLEX_UID=1000
+      - PLEX_GID=1000
+    hostname: xxx
     volumes:
       - '~/mediacenter/plex_config:/config'
       - '~/mediacenter/downloads:/data'
+    ports:
+      - "3001:32400"
+      - "3000:3000"
     networks:
       - webnet
   transmission:
