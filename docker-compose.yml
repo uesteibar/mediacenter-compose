@@ -23,6 +23,19 @@ services:
     volumes:
       - '~/mediacenter/transmission_config:/config'
       - '~/mediacenter/downloads:/downloads'
+    ports:
+      - "5001:9091"
+    networks:
+      - webnet
+  sonarr:
+    container_name: sonarr
+    image: linuxserver/sonarr
+    volumes:
+      - '~/mediacenter/sonarr_config:/config'
+      - '~/mediacenter/downloads:/downloads'
+      - '~/mediacenter/downloads/series:/tv'
+    ports:
+      - "4001:8989"
     networks:
       - webnet
   nginx:
