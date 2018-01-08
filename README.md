@@ -18,17 +18,23 @@ cp .env.sample .env
 
 Setup the environment
 
+You can set your download folders by using the `DOWNLOADS_FOLDER` env variable (default is `~/mediacenter/downloads`)
+
 ```
-./setup.sh
+DOWNLOADS_FOLDER=/path/to/folder ./setup.sh
 ```
 
 Run the containers
 
 ```
-docker-compose up -d
+DOWNLOADS_FOLDER=/path/to/folder docker-compose up -d
 ```
 
-You can now access [plex.localhost](http://plex.localhost) for your **Plex** server, and [torrent.localhost](http://torrent.localhost) for your **transmission** client.
+You can now access:
+
+* [plex.localhost](http://plex.localhost) for your **Plex** server (if you have any issue with streaming quality, you can fallback to `ip-address:3001`).
+* [torrent.localhost](http://torrent.localhost) for your **transmission** client.
+* [sonarr.localhost](http://sonarr.localhost) for your **sonarr** server.
 
 ## Roadmap
 

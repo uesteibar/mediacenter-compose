@@ -12,7 +12,7 @@ services:
     hostname: xxx
     volumes:
       - '~/mediacenter/plex_config:/config'
-      - '~/mediacenter/downloads:/data'
+      - '${DOWNLOADS_FOLDER-~/mediacenter/downloads}:/data'
     ports:
       - "3001:32400"
       - "3000:3000"
@@ -22,7 +22,7 @@ services:
     image: linuxserver/transmission
     volumes:
       - '~/mediacenter/transmission_config:/config'
-      - '~/mediacenter/downloads:/downloads'
+      - '${DOWNLOADS_FOLDER-~/mediacenter/downloads}:/downloads'
     ports:
       - "5001:9091"
     networks:
@@ -32,8 +32,8 @@ services:
     image: linuxserver/sonarr
     volumes:
       - '~/mediacenter/sonarr_config:/config'
-      - '~/mediacenter/downloads:/downloads'
-      - '~/mediacenter/downloads/series:/tv'
+      - '${DOWNLOADS_FOLDER-~/mediacenter/downloads}:/downloads'
+      - '${DOWNLOADS_FOLDER-~/mediacenter/downloads}/series:/tv'
     ports:
       - "4001:8989"
     networks:
