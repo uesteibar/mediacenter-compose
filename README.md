@@ -1,6 +1,6 @@
 # mediacenter-compose
 
-A docker setup to run a simple media center.
+A docker setup to run a simple media center. Designed to run alognside a plex installation in a raspberry pi.
 
 ## Running locally
 
@@ -32,7 +32,6 @@ DOWNLOADS_FOLDER=/path/to/folder docker-compose up -d
 
 You can now access:
 
-* [plex.localhost](http://plex.localhost) for your **Plex** server (if you have any issue with streaming quality, you can fallback to `ip-address:3001`).
 * [torrent.localhost](http://torrent.localhost) for your **transmission** client.
 * [sonarr.localhost](http://sonarr.localhost) for your **sonarr** server.
 
