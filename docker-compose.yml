@@ -1,23 +1,11 @@
 version: "3"
 services:
-  transmission:
-    image: linuxserver/transmission
+  cloudtorrent:
+    image: uesteibar/cloudtorrent-armhf
     volumes:
-      - '~/mediacenter/transmission_config:/config'
-      - '${DOWNLOADS_FOLDER-~/mediacenter/downloads}:/downloads'
+      - '${DOWNLOADS_FOLDER-/media/mediacenter/downloads}:/downloads'
     ports:
-      - "5001:9091"
-    networks:
-      - webnet
-  sonarr:
-    container_name: sonarr
-    image: linuxserver/sonarr
-    volumes:
-      - '~/mediacenter/sonarr_config:/config'
-      - '${DOWNLOADS_FOLDER-~/mediacenter/downloads}:/downloads'
-      - '${DOWNLOADS_FOLDER-~/mediacenter/downloads}/series:/tv'
-    ports:
-      - "4001:8989"
+      - "4000:3000"
     networks:
       - webnet
 

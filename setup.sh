@@ -1,11 +1,12 @@
 echo "-> Creating folders"
 
-DOWNLOADS_FOLDER=${DOWNLOADS_FOLDER:-~/mediacenter/downloads}
+DOWNLOADS_FOLDER=${DOWNLOADS_FOLDER:-/media/mediacenter/downloads}
 
 mkdir ~/mediacenter > /dev/null 2>&1
-mkdir ~/mediacenter/sonarr_config > /dev/null 2>&1
 mkdir $DOWNLOADS_FOLDER > /dev/null 2>&1
 mkdir $DOWNLOADS_FOLDER/series > /dev/null 2>&1
+mkdir $DOWNLOADS_FOLDER/movies > /dev/null 2>&1
+mkdir $DOWNLOADS_FOLDER/documentaries > /dev/null 2>&1
 
 echo "\nDone!"
 
